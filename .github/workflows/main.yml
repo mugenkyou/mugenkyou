@@ -27,22 +27,7 @@ jobs:
         fetch-depth: 0
         token: ${{ secrets.REPO_PAT }}
 
-    # Step 2: Create daily commit to main branch (for green squares)
-    - name: Daily commit to main branch
-      env:
-        GH_REPO: ${{ github.repository }}
-      run: |
-        git config user.name "mugenkyou"
-        git config user.email "mugenkyou@users.noreply.github.com"
-        
-        # Create timestamp file
-        echo "Last updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" > last-update.txt
-        echo "This file is automatically updated every 24 hours to maintain daily activity." >> last-update.txt
-        
-        # Add and commit to main branch
-        git add last-update.txt
-        git commit -m "Update Snake game and banner"
-        git push https://x-access-token:${{ secrets.REPO_PAT }}@github.com/${GH_REPO}.git HEAD:main
+   
 
     # Step 3: Checkout output branch for snake generation
     - name: Checkout output branch
