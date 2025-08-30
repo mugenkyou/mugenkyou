@@ -1,0 +1,70 @@
+name: Update Dynamic Header Banner
+
+on:
+  schedule:
+    # Runs every 12 hours to update banner based on time (less suspicious)
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-banner:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: output
+          token: ${{ secrets.REPO_PAT }}
+
+      # Install ImageMagick for image processing
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+      # Create assets directory if it doesn't exist
+      - name: Create assets directory
+        run: mkdir -p mugenkyou/assets
+
+      # Update header image based on time of day
+      - name: Update header image based on time
+        run: |
+          export TZ="Asia/Kolkata"
+          current_hour=$(date +%H)
+          echo "Current hour in IST is $current_hour"
+          
+          if (( current_hour >= 6 && current_hour < 18 )); then
+            echo "It's daytime. Creating day banner."
+            # Create a simple daytime banner
+            convert -size 800x200 xc:lightblue -gravity center -pointsize 40 -annotate 0 "Good Day! ☀️" mugenkyou/assets/dynamic-header.gif
+          else
+            echo "It's nighttime. Creating night banner."
+            # Create a simple nighttime banner
+            convert -size 800x200 xc:darkblue -gravity center -pointsize 40 -annotate 0 "Good Night! 🌙" mugenkyou/assets/dynamic-header.gif
+          fi
+
+      # Commit and push the updated banner
+      - name: Commit and push banner changes
+        env:
+          GH_REPO: ${{ github.repository }}
+        run: |
+          git config user.name "mugenkyou"
+          git config user.email "mugenkyou@users.noreply.github.com"
+          
+          # Add the updated banner
+          git add mugenkyou/assets/dynamic-header.gif
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No banner changes to commit"
+          else
+            git commit -m "Update"
+            git push https://x-access-token:${{ secrets.REPO_PAT }}@github.com/${GH_REPO}.git HEAD:output
+          fi
+
+      - name: Success message
+        run: |
+          echo "✅ Dynamic banner updated successfully!"
+          echo "🕐 Current time: $(date)"
+          echo "📁 Banner saved to: mugenkyou/assets/dynamic-header.gif"

@@ -1,0 +1,120 @@
+# Combined Auto Workflow: Snake Generation + Daily Commits
+
+name: Auto Snake & Daily Commit
+
+# Controls when the action will run
+on:
+  schedule:
+    # Runs daily at 02:00 UTC
+    - cron: "0 2 * * *"
+  # Allows manual trigger from Actions tab
+  workflow_dispatch:
+
+jobs:
+  auto-snake-and-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    
+    steps:
+    # Step 1: Checkout main branch for daily commits
+    - name: Checkout main branch
+      uses: actions/checkout@v4
+      with:
+        ref: main
+        fetch-depth: 0
+        token: ${{ secrets.REPO_PAT }}
+
+    # Step 2: Create daily commit to main branch (for green squares)
+    - name: Daily commit to main branch
+      env:
+        GH_REPO: ${{ github.repository }}
+      run: |
+        git config user.name "mugenkyou"
+        git config user.email "mugenkyou@users.noreply.github.com"
+        
+        # Create timestamp file
+        echo "Last updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" > last-update.txt
+        echo "This file is automatically updated every 24 hours to maintain daily activity." >> last-update.txt
+        
+        # Add and commit to main branch
+        git add last-update.txt
+        git commit -m "Update Snake game and banner"
+        git push https://x-access-token:${{ secrets.REPO_PAT }}@github.com/${GH_REPO}.git HEAD:main
+
+    # Step 3: Checkout output branch for snake generation
+    - name: Checkout output branch
+      uses: actions/checkout@v4
+      with:
+        ref: output
+        fetch-depth: 0
+        token: ${{ secrets.REPO_PAT }}
+
+    # Step 4: Generate snake contribution graph
+    - name: Generate snake
+      uses: Platane/snk@v3
+      id: snake-gif
+      with:
+        github_user_name: mugenkyou
+        # Generate the correct filenames that match the README
+        outputs: |
+          mugenkyou/ocean.gif
+          mugenkyou/github-snake.svg
+          mugenkyou/github-snake-dark.svg?palette=github-dark
+
+    # Step 5: Commit snake files to output branch
+    - name: Commit snake files
+      env:
+        GH_REPO: ${{ github.repository }}
+      run: |
+        git config user.name "mugenkyou"
+        git config user.email "mugenkyou@users.noreply.github.com"
+        
+        # Add all generated snake files
+        git add mugenkyou/
+        
+        # Only commit if there are changes
+        if git diff --staged --quiet; then
+          echo "No snake changes to commit"
+        else
+          git commit -m "Update"
+          git push https://x-access-token:${{ secrets.REPO_PAT }}@github.com/${GH_REPO}.git HEAD:output
+        fi
+
+    # Step 6: Create heartbeat file in output branch
+    - name: Create heartbeat
+      env:
+        GH_REPO: ${{ github.repository }}
+      run: |
+        # Create heartbeat file
+        mkdir -p .github/heartbeat
+        date -u +"%Y-%m-%dT%H:%M:%SZ" > .github/heartbeat/last-run.txt
+        
+        git add .github/heartbeat/last-run.txt
+        
+        # Only commit if there are changes
+        if git diff --staged --quiet; then
+          echo "No heartbeat changes to commit"
+        else
+          git commit -m "Update"
+          git push https://x-access-token:${{ secrets.REPO_PAT }}@github.com/${GH_REPO}.git HEAD:output
+        fi
+
+    # Step 7: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v4
+      with:
+        target_branch: output
+        build_dir: mugenkyou
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # Step 8: Success message
+    - name: Success message
+      run: |
+        echo "✅ Combined workflow completed successfully!"
+        echo "🐍 Snake generated and deployed"
+        echo "📝 Daily commit made to main branch"
+        echo "⏰ Heartbeat updated"
