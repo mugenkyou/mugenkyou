@@ -34,14 +34,49 @@ jobs:
           current_hour=$(date +%H)
           echo "Current hour in IST is $current_hour"
           
-          if (( current_hour >= 6 && current_hour < 18 )); then
-            echo "It's daytime. Creating day banner."
-            # Create a simple daytime banner
-            convert -size 800x200 xc:lightblue -gravity center -pointsize 40 -annotate 0 "Good Day! ☀️" assets/dynamic-header.gif
+          # Store previous file hash if it exists
+          if [ -f assets/dynamic-header.gif ]; then
+            PREV_HASH=$(md5sum assets/dynamic-header.gif | cut -d' ' -f1)
+            echo "Previous file hash: $PREV_HASH"
           else
-            echo "It's nighttime. Creating night banner."
-            # Create a simple nighttime banner
-            convert -size 800x200 xc:darkblue -gravity center -pointsize 40 -annotate 0 "Good Night! 🌙" assets/dynamic-header.gif
+            PREV_HASH=""
+            echo "No previous dynamic-header.gif found"
+          fi
+          
+          if (( current_hour >= 6 && current_hour < 18 )); then
+            echo "It's daytime (6 AM - 6 PM). Using day.gif"
+            # Copy day.gif to dynamic-header.gif for daytime
+            if [ -f assets/day.gif ]; then
+              cp assets/day.gif assets/dynamic-header.gif
+            else
+              echo "Error: assets/day.gif not found!"
+              exit 1
+            fi
+          else
+            echo "It's nighttime (6 PM - 6 AM). Using night.jpg"
+            # Convert night.jpg to gif format for consistency
+            if [ -f assets/night.jpg ]; then
+              convert assets/night.jpg -resize 800x200 -gravity center -extent 800x200 assets/dynamic-header.gif
+            else
+              echo "Error: assets/night.jpg not found!"
+              exit 1
+            fi
+          fi
+          
+          # Check if file actually changed
+          if [ -f assets/dynamic-header.gif ]; then
+            NEW_HASH=$(md5sum assets/dynamic-header.gif | cut -d' ' -f1)
+            echo "New file hash: $NEW_HASH"
+            if [ "$PREV_HASH" = "$NEW_HASH" ]; then
+              echo "File content unchanged, no need to commit"
+              echo "SKIP_COMMIT=true" >> $GITHUB_ENV
+            else
+              echo "File content changed, will commit"
+              echo "SKIP_COMMIT=false" >> $GITHUB_ENV
+            fi
+          else
+            echo "Failed to create dynamic-header.gif"
+            exit 1
           fi
 
       # Commit and push the updated banner to main branch
@@ -49,22 +84,39 @@ jobs:
         env:
           GH_REPO: ${{ github.repository }}
         run: |
+          # Configure git
           git config user.name "mugenkyou"
           git config user.email "mugenkyou@users.noreply.github.com"
+          
+          # Check if we should skip commit
+          if [ "$SKIP_COMMIT" = "true" ]; then
+            echo "Skipping commit - no changes detected"
+            exit 0
+          fi
           
           # Add the updated banner
           git add assets/dynamic-header.gif
           
-          # Only commit if there are changes
+          # Check if there are actually staged changes
           if git diff --staged --quiet; then
-            echo "No banner changes to commit"
+            echo "No staged changes to commit"
           else
-            git commit -m "Update"
+            # Get current time for commit message
+            CURRENT_TIME=$(TZ="Asia/Kolkata" date '+%Y-%m-%d %H:%M:%S IST')
+            COMMIT_MSG="🔄 Auto-update banner for $(TZ="Asia/Kolkata" date '+%H:%M IST') - $CURRENT_TIME"
+            
+            echo "Committing changes with message: $COMMIT_MSG"
+            git commit -m "$COMMIT_MSG"
+            
+            # Push changes
             git push https://x-access-token:${{ secrets.REPO_PAT }}@github.com/${GH_REPO}.git HEAD:main
+            echo "✅ Changes pushed successfully!"
           fi
 
       - name: Success message
         run: |
-          echo "✅ Banner updated successfully in main branch!"
-          echo "🕐 Current time: $(date)"
+          echo "✅ Banner workflow completed successfully!"
+          echo "🕐 Current time: $(TZ='Asia/Kolkata' date)"
           echo "📁 Banner saved to: assets/dynamic-header.gif"
+          echo "🌅 Daytime: 6 AM - 6 PM (day.gif)"
+          echo "🌙 Nighttime: 6 PM - 6 AM (night.jpg converted to gif)"
