@@ -7,8 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mugenkyou/mugenkyou/main/assets/dynamic-header.gif" alt="Dynamic Header Image based on time of day" width="75%"/>
-  
+  <img src="https://github.com/Adi-Deshmukh/Adi-Deshmukh/blob/main/assets/dynamic-header.gif?raw=true" alt="Dynamic Header Image based on time of day" width="75%"/>
 </p>
 
 <div align="center">
