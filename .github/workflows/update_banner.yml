@@ -2,8 +2,8 @@ name: Update Banner & Daily Activity
 
 on:
   schedule:
-    # Runs every 12 hours to maintain daily activity
-    - cron: '0 */12 * * *'
+    # Runs every 10 minutes
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          token: ${{ secrets.REPO_PAT }}
+          fetch-depth: 0
 
       # Install ImageMagick for image processing
       - name: Install ImageMagick
@@ -108,8 +108,8 @@ jobs:
             echo "Committing changes with message: $COMMIT_MSG"
             git commit -m "$COMMIT_MSG"
             
-            # Push changes
-            git push https://x-access-token:${{ secrets.REPO_PAT }}@github.com/${GH_REPO}.git HEAD:main
+            # Push changes using GITHUB_TOKEN-provisioned remote
+            git push origin HEAD:main
             echo "✅ Changes pushed successfully!"
           fi
 
