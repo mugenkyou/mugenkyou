@@ -57,6 +57,10 @@ jobs:
           echo "Current hour in IST is $current_hour"
           MODE=${INPUT_MODE:-auto}
           FORCE_COMMIT=${INPUT_FORCE_COMMIT:-false}
+          # For scheduled runs, default to forcing a refresh so the file changes
+          if [ "${GITHUB_EVENT_NAME}" = "schedule" ] && [ "${INPUT_FORCE_COMMIT}" = "" ]; then
+            FORCE_COMMIT=true
+          fi
           echo "Requested mode: $MODE | Force commit: $FORCE_COMMIT"
           
           # Store previous file hash if it exists
