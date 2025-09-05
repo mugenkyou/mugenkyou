@@ -2,8 +2,8 @@ name: Update Banner & Daily Activity
 
 on:
   schedule:
-    # Runs every 10 minutes
-    - cron: '*/10 * * * *'
+    # Runs every 8 hours
+    - cron: '0 */8 * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -175,7 +175,7 @@ jobs:
           else
             # Get current time for commit message
             CURRENT_TIME=$(TZ="Asia/Kolkata" date '+%Y-%m-%d %H:%M:%S IST')
-            COMMIT_MSG="🔄 Auto-update banner for $(TZ="Asia/Kolkata" date '+%H:%M IST') - $CURRENT_TIME"
+            COMMIT_MSG="🔄 Auto-update banner for $(TZ="Asia/Kolkata" date '+%H:%M IST')"
             
             echo "Committing changes with message: $COMMIT_MSG"
             if [ "${ALLOW_EMPTY}" = "true" ]; then
