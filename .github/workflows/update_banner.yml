@@ -5,6 +5,25 @@ on:
     # Runs every 10 minutes
     - cron: '*/10 * * * *'
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Choose banner mode: auto uses time; day/night override; toggle flips'
+        required: false
+        default: 'auto'
+        type: choice
+        options:
+          - auto
+          - day
+          - night
+          - toggle
+      force_commit:
+        description: 'Force refresh (always writes file and commits even if same)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
 
 jobs:
   update-banner:
@@ -29,10 +48,16 @@ jobs:
 
       # Update header image based on time of day
       - name: Update header image based on time
+        env:
+          INPUT_MODE: ${{ github.event.inputs.mode }}
+          INPUT_FORCE_COMMIT: ${{ github.event.inputs.force_commit }}
         run: |
           export TZ="Asia/Kolkata"
           current_hour=$(date +%H)
           echo "Current hour in IST is $current_hour"
+          MODE=${INPUT_MODE:-auto}
+          FORCE_COMMIT=${INPUT_FORCE_COMMIT:-false}
+          echo "Requested mode: $MODE | Force commit: $FORCE_COMMIT"
           
           # Store previous file hash if it exists
           if [ -f assets/dynamic-header.gif ]; then
@@ -43,33 +68,76 @@ jobs:
             echo "No previous dynamic-header.gif found"
           fi
           
-          if (( current_hour >= 6 && current_hour < 18 )); then
-            echo "It's daytime (6 AM - 6 PM). Using day.gif"
-            # Copy day.gif to dynamic-header.gif for daytime
+          choose_day() {
+            echo "Selecting DAY banner"
             if [ -f assets/day.gif ]; then
-              cp assets/day.gif assets/dynamic-header.gif
+              if [ "$FORCE_COMMIT" = "true" ]; then
+                convert assets/day.gif -set comment "forced=$(TZ=Asia/Kolkata date +%s)" assets/dynamic-header.gif
+              else
+                cp assets/day.gif assets/dynamic-header.gif
+              fi
             else
-              echo "Error: assets/day.gif not found!"
-              exit 1
+              echo "Error: assets/day.gif not found!"; exit 1
             fi
-          else
-            echo "It's nighttime (6 PM - 6 AM). Using night.jpg"
-            # Convert night.jpg to gif format for consistency
+          }
+          choose_night() {
+            echo "Selecting NIGHT banner"
             if [ -f assets/night.jpg ]; then
-              convert assets/night.jpg -resize 800x200 -gravity center -extent 800x200 assets/dynamic-header.gif
+              convert assets/night.jpg -resize 800x200 -gravity center -extent 800x200 -set comment "ts=$(TZ=Asia/Kolkata date +%s)" assets/dynamic-header.gif
             else
-              echo "Error: assets/night.jpg not found!"
-              exit 1
+              echo "Error: assets/night.jpg not found!"; exit 1
             fi
-          fi
+          }
+
+          case "$MODE" in
+            day)
+              choose_day ;;
+            night)
+              choose_night ;;
+            toggle)
+              if [ -f assets/dynamic-header.gif ] && [ -f assets/day.gif ]; then
+                CUR_HASH=$(md5sum assets/dynamic-header.gif | cut -d' ' -f1)
+                DAY_HASH=$(md5sum assets/day.gif | cut -d' ' -f1)
+                if [ "$CUR_HASH" = "$DAY_HASH" ]; then
+                  echo "Current is DAY, toggling to NIGHT"
+                  choose_night
+                else
+                  echo "Current is NIGHT/other, toggling to DAY"
+                  choose_day
+                fi
+              else
+                # Fallback: toggle relative to time
+                if (( current_hour >= 6 && current_hour < 18 )); then
+                  choose_night
+                else
+                  choose_day
+                fi
+              fi
+              ;;
+            auto|*)
+              if (( current_hour >= 6 && current_hour < 18 )); then
+                echo "It's daytime (6 AM - 6 PM). Using day.gif"
+                choose_day
+              else
+                echo "It's nighttime (6 PM - 6 AM). Using night.jpg"
+                choose_night
+              fi
+              ;;
+          esac
           
           # Check if file actually changed
           if [ -f assets/dynamic-header.gif ]; then
             NEW_HASH=$(md5sum assets/dynamic-header.gif | cut -d' ' -f1)
             echo "New file hash: $NEW_HASH"
             if [ "$PREV_HASH" = "$NEW_HASH" ]; then
-              echo "File content unchanged, no need to commit"
-              echo "SKIP_COMMIT=true" >> $GITHUB_ENV
+              if [ "$FORCE_COMMIT" = "true" ]; then
+                echo "File unchanged but force requested, will commit"
+                echo "SKIP_COMMIT=false" >> $GITHUB_ENV
+                echo "ALLOW_EMPTY=true" >> $GITHUB_ENV
+              else
+                echo "File content unchanged, no need to commit"
+                echo "SKIP_COMMIT=true" >> $GITHUB_ENV
+              fi
             else
               echo "File content changed, will commit"
               echo "SKIP_COMMIT=false" >> $GITHUB_ENV
@@ -106,7 +174,11 @@ jobs:
             COMMIT_MSG="🔄 Auto-update banner for $(TZ="Asia/Kolkata" date '+%H:%M IST') - $CURRENT_TIME"
             
             echo "Committing changes with message: $COMMIT_MSG"
-            git commit -m "$COMMIT_MSG"
+            if [ "${ALLOW_EMPTY}" = "true" ]; then
+              git commit --allow-empty -m "$COMMIT_MSG"
+            else
+              git commit -m "$COMMIT_MSG"
+            fi
             
             # Push changes using GITHUB_TOKEN-provisioned remote
             git push origin HEAD:main
