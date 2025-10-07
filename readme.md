@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=180&section=header&text=Sachin%20Patel&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=38&desc=%20%7C%20AI%20Engineer%20%7C%20Full%20Stack%20Developer&descAlignY=58&descAlign=50"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=180&section=header&text=Sachin%20Patel&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=38&desc=%20AI%20%20Engineer%20%7C%20Full%20Stack%20Developer&descAlignY=58&descAlign=50"/>
 </div>
 
 <p align="center">
@@ -14,50 +14,52 @@
   </picture>
 </div>
 
+##
+
 <div align="center">
   
-  [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-FF6B6B?style=for-the-badge&logoColor=white&labelColor=000)](https://sachinpatel.me)
-  [![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=000)](https://www.linkedin.com/in/sachinskyte)
-  [![Email](https://img.shields.io/badge/📧_Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=000)](mailto:sachinskyte@gmail.com)
-  [![Resume](https://img.shields.io/badge/📄_Resume-4285F4?style=for-the-badge&logoColor=white&labelColor=000)](https://drive.google.com/file/d/1eFplPBCYvSF3U1FiReUJ5RISRljBbGMP/view?usp=sharing)
+  <a href="https://sachinpatel.me">
+    <img src="https://img.shields.io/badge/Portfolio-FF6B6B?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio"/>
+  </a>
+  <a href="https://www.linkedin.com/in/sachinskyte">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="mailto:sachinskyte@gmail.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+ 
   
 </div>
 
-## 📊 ***GitHub Statistics*** 
 
-<div align="center">
-<table>
-<tr>
-<td width="50%" valign="top">
-<img width="100%" src="https://github-readme-stats.vercel.app/api?username=mugenkyou&show_icons=true&theme=radical&hide_border=true&count_private=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&text_color=C9D1D9&border_radius=15" alt="Sachin's GitHub Stats">
-</td>
-<td width="50%" valign="top">
-<img width="100%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mugenkyou&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9&border_radius=15&langs_count=8&exclude_repo=repo1,repo2" alt="Sachin's Top Languages">
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<img width="100%" src="https://github-readme-streak-stats.herokuapp.com/?user=mugenkyou&theme=radical&background=0D1117&currStreakNum=F85D7F&sideNums=F8D866&currStreakLabel=F85D7F&sideLabels=C9D1D9&dates=C9D1D9&hide_border=true&border_radius=15" alt="Sachin's GitHub Streak">
-</td>
-</tr>
-</table>
-</div>
+---
+###
 
-## 🛠️ ***Tech Stack***
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mugenkyou&theme=github-dark-dimmed&hide_border=true&ring=ff0000&fire=ff0000&currStreakLabel=ff0000" width="47%"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mugenkyou&layout=compact&hide_border=true&theme=github_dark&title_color=ff0000&text_color=c9d1d9&langs_count=6&card_width=420&custom_title=Most%20Used%20Languages" width="47%"/>
+</p>
+
+
+
+---
+###
+
+##
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=python,pytorch,opencv,tensorflow,ros,linux,docker,git&theme=dark&perline=8"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-f7d747?style=for-the-badge&logo=python&logoColor=black&labelColor=0d1117"/>
-  <img src="https://img.shields.io/badge/PyTorch-f7d747?style=for-the-badge&logo=pytorch&logoColor=black&labelColor=0d1117"/>
-  <img src="https://img.shields.io/badge/OpenCV-f7d747?style=for-the-badge&logo=opencv&logoColor=black&labelColor=0d1117"/>
-  <img src="https://img.shields.io/badge/ROS-f7d747?style=for-the-badge&logo=ros&logoColor=black&labelColor=0d1117"/>
-  <img src="https://img.shields.io/badge/Linux-f7d747?style=for-the-badge&logo=linux&logoColor=black&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/>
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white"/>
+  <img src="https://img.shields.io/badge/ROS-22314E?style=for-the-badge&logo=ros&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"/>
 </p>
 
-## 📈 ***Contribution Activity***
+##  ***Contribution Activity***
 
 <div align="center">
   <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=mugenkyou&custom_title=My%20Contribution%20Graph&bg_color=0D1117&color=F85D7F&line=F8D866&point=FFFFFF&area_color=F85D7F30&title_color=F85D7F&area=true&hide_border=true&radius=16" alt="Sachin's GitHub Activity Graph"/>
