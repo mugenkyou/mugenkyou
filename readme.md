@@ -6,9 +6,13 @@
   <img src="https://komarev.com/ghpvc/?username=mugenkyou&label=Profile%20views&color=7a9ce1&style=plastic" alt="mugenkyou" />
 </p>
 
-<p align="center">
-  <img src="https://github.com/Adi-Deshmukh/Adi-Deshmukh/blob/main/assets/dynamic-header.gif?raw=true" alt="Dynamic Header Image based on time of day" width="75%"/>
-</p>
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mugenkyou/mugenkyou/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mugenkyou/mugenkyou/output/github-snake.svg" />
+    <img alt="github-snake" src="https://raw.githubusercontent.com/mugenkyou/mugenkyou/output/github-snake.svg" />
+  </picture>
+</div>
 
 <div align="center">
   
@@ -19,38 +23,7 @@
   
 </div>
 
-## ***About Me***
 
-<picture><img align="right" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" width="300"></picture>
-
-<br>
-
-```yaml
-name: Sachin Patel
-located_in: Bengaluru, India
-current_job: AI Engineer & Full Stack Developer
-education: ["Computer Science", "AI & ML"]
-status: Student
-
-fields_of_interests:
-  - "Artificial Intelligence"
-  - "Machine Learning Operations"
-  - "Full Stack Development"
-  - "Finance"
-  
-technical_background:
-  - "AI/ML Model Development"
-  - "MLOps & Production Deployment"
-  - "Web Application Development"
-  - "Data Pipeline Architecture"
-  - "Automation & Scripting"
-
-currently_learning: ["LLMs", "MLOps", "Data Science"]
-2025_goals: ["Contribute to Open Source", "Build AI Products", "Tech Leadership"]
-hobbies: ["Problem Solving", "Technology", "Innovation"]
-```
-
-<br>
 
 
 ## 📊 ***GitHub Statistics*** 
@@ -76,26 +49,22 @@ hobbies: ["Problem Solving", "Technology", "Innovation"]
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mugenkyou&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=C9D1D9&border_radius=15&langs_count=12&exclude_repo=repo1,repo2" alt="Sachin's Top Languages">
 </div>
 
-## ⏰ ***Development Breakdown***
-
-<!--START_SECTION:waka-->
-```text
-💻 I Spent My Time On
-
-Python       █████████████████▓░░░   68.2%
-Analytics    ████████▓░░░░░░░░░░░░   15.4%
-SQL          ██████▓░░░░░░░░░░░░░░   10.1%
-Javascript   ████▓░░░░░░░░░░░░░░░░    4.8%
-YAML         ██▓░░░░░░░░░░░░░░░░░░    1.5%
-
-Editors:
-
-VS Code      ████████████████▓░░░░░   70%
-Jupyter      █████████▓░░░░░░░░░░░░   30%
-```
-<!--END_SECTION:waka-->
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Python-f7d747?style=for-the-badge&logo=python&logoColor=black&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/PyTorch-f7d747?style=for-the-badge&logo=pytorch&logoColor=black&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/OpenCV-f7d747?style=for-the-badge&logo=opencv&logoColor=black&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/ROS-f7d747?style=for-the-badge&logo=ros&logoColor=black&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/Linux-f7d747?style=for-the-badge&logo=linux&logoColor=black&labelColor=0d1117"/>
+</p>
+
+###
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,pytorch,opencv,tensorflow,ros,linux,docker,git&theme=dark&perline=8"/>
+</p>
+
+---
+###
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=mugenkyou&custom_title=My%20Contribution%20Graph&bg_color=0D1117&color=F85D7F&line=F8D866&point=FFFFFF&area_color=F85D7F30&title_color=F85D7F&area=true&hide_border=true&radius=16" alt="Sachin's GitHub Activity Graph"/>
 </p>
 
@@ -104,13 +73,7 @@ Jupyter      █████████▓░░░░░░░░░░░░ 
 
 ---
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mugenkyou/mugenkyou/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mugenkyou/mugenkyou/output/github-snake.svg" />
-    <img alt="github-snake" src="https://raw.githubusercontent.com/mugenkyou/mugenkyou/output/github-snake.svg" />
-  </picture>
-</div>
+
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=footer"/>
