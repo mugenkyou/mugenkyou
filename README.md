@@ -3,10 +3,6 @@
 </div>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=24&pause=1000&color=00E5FF&center=true&vCenter=true&width=700&lines=Building+Intelligent+Systems;Engineering+with+AI;Exploring+Machine+Learning;AI+%2B+Code+%2B+Innovation" />
-</p>
-
-<p align="center">
   <img src="https://komarev.com/ghpvc/?username=mugenkyou&label=Profile%20views&color=7a9ce1&style=plastic" alt="mugenkyou" />
 </p>
 
@@ -18,47 +14,29 @@
 
 <br/>
 
----
-
-<h2 align="center">⚡ PROFILE ⚡</h2>
-
 <p align="center">
-  <img src="https://img.shields.io/badge/STATUS-ACTIVE-00E5FF?style=for-the-badge&labelColor=0d1117" />
-  <img src="https://img.shields.io/badge/MODE-BUILDING-8A2BE2?style=for-the-badge&labelColor=0d1117" />
-  <img src="https://img.shields.io/badge/FOCUS-AI%20%26%20ML-00E5FF?style=for-the-badge&labelColor=0d1117" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mugenkyou&theme=github-dark-dimmed&hide_border=true&ring=ff0000&fire=ff0000&currStreakLabel=ff0000" width="47%"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mugenkyou&layout=compact&hide_border=true&theme=github_dark&title_color=ff0000&text_color=c9d1d9&langs_count=6&card_width=420&custom_title=Most%20Used%20Languages" width="47%"/>
 </p>
 
-<div align="center">
+<br/>
 
-```python
-class SachinPatel:
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,cpp,typescript,javascript,pytorch,fastapi,nodejs,docker,git,github&theme=dark&perline=10"/>
+</p>
 
-    def __init__(self):
-        self.username = "mugenkyou"
-        self.role = "AI Engineer & Full-Stack Developer"
-        self.language = [
-            "Python",
-            "C++",
-            "TypeScript",
-            "JavaScript"
-        ]
-        self.specialization = [
-            "Machine Learning",
-            "LLMs",
-            "Reinforcement Learning",
-            "AI Systems",
-            "Full Stack Development"
-        ]
-
-    def current_focus(self):
-        return [
-            "AI Agents & Automation",
-            "Reliable AI Systems",
-            "ML Research"
-        ]
-```
-
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MCP-111111?style=for-the-badge&logo=anthropic&logoColor=white"/>
+</p>
 
 <br/>
 
@@ -73,6 +51,7 @@ class SachinPatel:
     <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
   </a>
 </div>
+
 
 
 
