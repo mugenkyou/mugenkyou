@@ -30,9 +30,6 @@
 <br/>
 
 <div align="center">
-  <a href="https://sachinpatel.me">
-    <img src="https://img.shields.io/badge/Portfolio-FF6B6B?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio"/>
-  </a>
   <a href="https://www.linkedin.com/in/sachinskyte">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
