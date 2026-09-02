@@ -1,43 +1,43 @@
 {
-    "username":  "mugenkyou",
-    "fetched_at":  "2026-09-02T15:17:49Z",
-    "total_bytes":  20338542,
-    "languages":  [
-                      {
-                          "name":  "Python",
-                          "bytes":  18073926,
-                          "percentage":  88.87,
-                          "color":  "#3572A5"
-                      },
-                      {
-                          "name":  "TypeScript",
-                          "bytes":  626357,
-                          "percentage":  3.08,
-                          "color":  "#8A2BE2"
-                      },
-                      {
-                          "name":  "JavaScript",
-                          "bytes":  623762,
-                          "percentage":  3.07,
-                          "color":  "#f1e05a"
-                      },
-                      {
-                          "name":  "HTML",
-                          "bytes":  569885,
-                          "percentage":  2.8,
-                          "color":  "#e34c26"
-                      },
-                      {
-                          "name":  "CSS",
-                          "bytes":  396737,
-                          "percentage":  1.95,
-                          "color":  "#563d7c"
-                      },
-                      {
-                          "name":  "C",
-                          "bytes":  47875,
-                          "percentage":  0.24,
-                          "color":  "#555555"
-                      }
-                  ]
+  "username": "mugenkyou",
+  "fetched_at": "2026-09-02T15:25:06Z",
+  "total_bytes": 20338542,
+  "languages": [
+    {
+      "name": "Python",
+      "bytes": 18073926,
+      "percentage": 88.87,
+      "color": "#3572A5"
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 626357,
+      "percentage": 3.08,
+      "color": "#8A2BE2"
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 623762,
+      "percentage": 3.07,
+      "color": "#f1e05a"
+    },
+    {
+      "name": "HTML",
+      "bytes": 569885,
+      "percentage": 2.8,
+      "color": "#e34c26"
+    },
+    {
+      "name": "CSS",
+      "bytes": 396737,
+      "percentage": 1.95,
+      "color": "#563d7c"
+    },
+    {
+      "name": "C",
+      "bytes": 47875,
+      "percentage": 0.24,
+      "color": "#555555"
+    }
+  ]
 }
