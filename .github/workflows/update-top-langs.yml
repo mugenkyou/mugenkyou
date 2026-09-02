@@ -1,0 +1,35 @@
+name: Update Top Languages
+
+# Refreshes the top languages SVG weekly from real GitHub repository data.
+# Runs weekly, plus whenever pushed to main, plus on-demand.
+
+"on":
+  schedule:
+    - cron: "0 0 * * 0"   # Every Sunday at 00:00 UTC
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  top-langs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch GitHub language statistics and render SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate_top_langs.py
+
+      - name: Commit updated language stats SVG
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh top languages stats [skip ci]"
+          file_pattern: "data/top_languages.json top-langs.svg"

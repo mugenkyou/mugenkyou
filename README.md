@@ -16,7 +16,7 @@
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=mugenkyou&theme=github-dark-dimmed&hide_border=true&ring=ff0000&fire=ff0000&currStreakLabel=ff0000" width="47%"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mugenkyou&layout=compact&hide_border=true&theme=github_dark&title_color=ff0000&text_color=c9d1d9&langs_count=6&card_width=420&custom_title=Most%20Used%20Languages" width="47%"/>
+  <img src="./top-langs.svg" width="47%" alt="Most Used Languages" />
 </p>
 
 <br/>
@@ -28,7 +28,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/>
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-8A2BE2?style=for-the-badge&logo=typescript&logoColor=white"/>
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/>
   <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
