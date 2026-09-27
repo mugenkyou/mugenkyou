@@ -12,42 +12,42 @@
       <rect width="370" height="8" rx="4"/>
     </clipPath>
     <g clip-path="url(#bar-clip)">
-      <rect x="0.00" y="0" width="324.12" height="8" fill="#3572A5"/>
-      <rect x="324.12" y="0" width="17.06" height="8" fill="#8A2BE2"/>
-      <rect x="341.18" y="0" width="10.99" height="8" fill="#f1e05a"/>
-      <rect x="352.17" y="0" width="10.03" height="8" fill="#e34c26"/>
-      <rect x="362.19" y="0" width="6.99" height="8" fill="#563d7c"/>
-      <rect x="369.19" y="0" width="0.85" height="8" fill="#555555"/>
+      <rect x="0.00" y="0" width="318.75" height="8" fill="#3572A5"/>
+      <rect x="318.75" y="0" width="16.50" height="8" fill="#8A2BE2"/>
+      <rect x="335.26" y="0" width="10.62" height="8" fill="#f1e05a"/>
+      <rect x="345.88" y="0" width="9.69" height="8" fill="#e34c26"/>
+      <rect x="355.57" y="0" width="7.66" height="8" fill="#FFBD2E"/>
+      <rect x="363.23" y="0" width="6.77" height="8" fill="#563d7c"/>
     </g>
   </g>
   <g transform="translate(25, 82)">
     <circle cx="5" cy="6" r="5" fill="#3572A5"/>
     <text x="16" y="10" class="lang-name">Python</text>
-    <text x="150" y="10" class="lang-pct" text-anchor="end">87.60%</text>
+    <text x="150" y="10" class="lang-pct" text-anchor="end">86.15%</text>
   </g>
   <g transform="translate(215, 82)">
     <circle cx="5" cy="6" r="5" fill="#8A2BE2"/>
     <text x="16" y="10" class="lang-name">TypeScript</text>
-    <text x="150" y="10" class="lang-pct" text-anchor="end">4.61%</text>
+    <text x="150" y="10" class="lang-pct" text-anchor="end">4.46%</text>
   </g>
   <g transform="translate(25, 110)">
     <circle cx="5" cy="6" r="5" fill="#f1e05a"/>
     <text x="16" y="10" class="lang-name">JavaScript</text>
-    <text x="150" y="10" class="lang-pct" text-anchor="end">2.97%</text>
+    <text x="150" y="10" class="lang-pct" text-anchor="end">2.87%</text>
   </g>
   <g transform="translate(215, 110)">
     <circle cx="5" cy="6" r="5" fill="#e34c26"/>
     <text x="16" y="10" class="lang-name">HTML</text>
-    <text x="150" y="10" class="lang-pct" text-anchor="end">2.71%</text>
+    <text x="150" y="10" class="lang-pct" text-anchor="end">2.62%</text>
   </g>
   <g transform="translate(25, 138)">
-    <circle cx="5" cy="6" r="5" fill="#563d7c"/>
-    <text x="16" y="10" class="lang-name">CSS</text>
-    <text x="150" y="10" class="lang-pct" text-anchor="end">1.89%</text>
+    <circle cx="5" cy="6" r="5" fill="#FFBD2E"/>
+    <text x="16" y="10" class="lang-name">Jupyter Notebook</text>
+    <text x="150" y="10" class="lang-pct" text-anchor="end">2.07%</text>
   </g>
   <g transform="translate(215, 138)">
-    <circle cx="5" cy="6" r="5" fill="#555555"/>
-    <text x="16" y="10" class="lang-name">C</text>
-    <text x="150" y="10" class="lang-pct" text-anchor="end">0.23%</text>
+    <circle cx="5" cy="6" r="5" fill="#563d7c"/>
+    <text x="16" y="10" class="lang-name">CSS</text>
+    <text x="150" y="10" class="lang-pct" text-anchor="end">1.83%</text>
   </g>
 </svg>
