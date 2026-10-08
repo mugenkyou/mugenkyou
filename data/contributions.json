@@ -1,22 +1,22 @@
 {
   "username": "mugenkyou",
-  "generated_at": "2026-10-07T13:18:42Z",
+  "generated_at": "2026-10-08T13:25:19Z",
   "range": {
     "start": "2025-10-05",
+    "end": "2026-10-08"
+  },
+  "total_contributions": 1353,
+  "active_days": 180,
+  "avg_per_active_day": 7.5,
+  "current_streak": {
+    "length": 41,
+    "start": "2026-08-28",
     "end": "2026-10-07"
   },
-  "total_contributions": 1294,
-  "active_days": 179,
-  "avg_per_active_day": 7.2,
-  "current_streak": {
-    "length": 40,
-    "start": "2026-08-28",
-    "end": "2026-10-06"
-  },
   "longest_streak": {
-    "length": 40,
+    "length": 41,
     "start": "2026-08-28",
-    "end": "2026-10-06"
+    "end": "2026-10-07"
   },
   "best_day": {
     "date": "2026-09-27",
@@ -65,7 +65,7 @@
     },
     {
       "month": "2026-08",
-      "total": 247
+      "total": 286
     },
     {
       "month": "2026-09",
@@ -73,7 +73,7 @@
     },
     {
       "month": "2026-10",
-      "total": 56
+      "total": 76
     }
   ],
   "days": [
@@ -1295,7 +1295,7 @@
     },
     {
       "date": "2026-08-05",
-      "count": 16
+      "count": 32
     },
     {
       "date": "2026-08-06",
@@ -1303,11 +1303,11 @@
     },
     {
       "date": "2026-08-07",
-      "count": 10
+      "count": 20
     },
     {
       "date": "2026-08-08",
-      "count": 12
+      "count": 24
     },
     {
       "date": "2026-08-09",
@@ -1395,7 +1395,7 @@
     },
     {
       "date": "2026-08-30",
-      "count": 6
+      "count": 7
     },
     {
       "date": "2026-08-31",
@@ -1547,6 +1547,10 @@
     },
     {
       "date": "2026-10-07",
+      "count": 20
+    },
+    {
+      "date": "2026-10-08",
       "count": 0
     }
   ]
