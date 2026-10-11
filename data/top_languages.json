@@ -1,42 +1,42 @@
 {
   "username": "mugenkyou",
-  "fetched_at": "2026-10-04T03:00:09Z",
-  "total_bytes": 21796211,
+  "fetched_at": "2026-10-11T02:24:30Z",
+  "total_bytes": 22126315,
   "languages": [
     {
       "name": "Python",
-      "bytes": 18777110,
-      "percentage": 86.15,
+      "bytes": 18983951,
+      "percentage": 85.8,
       "color": "#3572A5"
     },
     {
       "name": "TypeScript",
-      "bytes": 971965,
-      "percentage": 4.46,
+      "bytes": 1089821,
+      "percentage": 4.93,
       "color": "#8A2BE2"
     },
     {
       "name": "JavaScript",
-      "bytes": 626003,
-      "percentage": 2.87,
+      "bytes": 626580,
+      "percentage": 2.83,
       "color": "#f1e05a"
     },
     {
       "name": "HTML",
-      "bytes": 570628,
-      "percentage": 2.62,
+      "bytes": 571143,
+      "percentage": 2.58,
       "color": "#e34c26"
     },
     {
       "name": "Jupyter Notebook",
       "bytes": 451994,
-      "percentage": 2.07,
+      "percentage": 2.04,
       "color": "#FFBD2E"
     },
     {
       "name": "CSS",
-      "bytes": 398511,
-      "percentage": 1.83,
+      "bytes": 402826,
+      "percentage": 1.82,
       "color": "#563d7c"
     }
   ]
